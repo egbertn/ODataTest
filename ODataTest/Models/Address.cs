@@ -1,13 +1,22 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
-using System.Linq;
-using System.Web;
 
 namespace ODataTest.Models
 {
     public class Address
     {
+        public override int GetHashCode()
+        {
+            return Id.GetHashCode();
+        }
+        public override bool Equals(object obj)
+        {
+            if (obj is Address address)
+            {
+                return address.Id == this.Id;
+            }
+            return false;
+        }
         [Key]
         public Guid Id { get; set; }
         public string Street { get; set; }

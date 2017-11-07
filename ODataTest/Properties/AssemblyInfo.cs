@@ -8,9 +8,9 @@ using System.Runtime.InteropServices;
 [assembly: AssemblyTitle("ODataTest")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("")]
+[assembly: AssemblyCompany("ADC Cure, Amsterdam")]
 [assembly: AssemblyProduct("ODataTest")]
-[assembly: AssemblyCopyright("Copyright ©  2017")]
+[assembly: AssemblyCopyright("Copyright; NO Copyright, just a demo")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 
