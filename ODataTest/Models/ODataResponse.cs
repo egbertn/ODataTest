@@ -12,6 +12,7 @@ namespace ODataTest.Models
     /// <typeparam name="T"></typeparam>
     public class ODataResponse<T> where T : class
     {
+        
         [JsonProperty("@odata.context")]
         public string context { get; set; }
         public IEnumerable<T> value { get; set; }

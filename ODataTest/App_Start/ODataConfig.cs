@@ -22,7 +22,7 @@ namespace ODataTest.App_Start
             var builder = new ODataConventionModelBuilder(config) { Namespace = typeof(Company).Namespace };
 
             var companyEntity = builder.EntitySet<Company>("Companies").EntityType;
-            builder.ComplexType<Address>();
+            builder.EntitySet<Address>("Addresses");
             // this is what we support
             config.Count().Filter().OrderBy().Select().MaxTop(null).Expand();
 

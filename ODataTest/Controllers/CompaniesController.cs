@@ -58,18 +58,20 @@ namespace ODataTest.Controllers
             return StatusCode(HttpStatusCode.NoContent);
 
         }
-        public async Task<IHttpActionResult> Patch(Guid key, Delta<Company> companyDelta)
+        [AcceptVerbs("PUT", "POST")]
+        public async Task<IHttpActionResult> CreateRef([FromODataUri]Guid key, string navigationProperty, [FromBody] Uri link)
         {
             if (!ModelState.IsValid)
             {
                 return BadRequest(ModelState);
             }
+            //navigationProperty must be 'Addresses' here
             var result = Companies.FirstOrDefault(f => f.Id == key);
             if (result == null)
             {
                 return NotFound();
             }
-            companyDelta.Patch(result);
+          //  companyDelta.Patch(result);
             return Updated(result);
 
         }
