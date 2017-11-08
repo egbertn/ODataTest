@@ -51,7 +51,7 @@ namespace UnitTestProject1
             var builder = new ODataConventionModelBuilder(config) { Namespace = typeof(Company).Namespace };
 
             var companyEntity = builder.EntitySet<Company>("Companies").EntityType;
-            var AddressEntity = builder.EntitySet<Address>("Addresses").EntityType;
+            builder.ComplexType<Address>();
             // this is what we support
             config.Count().Filter().OrderBy().Select().MaxTop(null).Expand();
 
